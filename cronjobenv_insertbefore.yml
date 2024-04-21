@@ -1,0 +1,13 @@
+---
+- name: Remove cron
+  hosts: all
+
+  tasks:
+  - name: remove cron
+    cron:
+      name: JARR
+      env: yes
+      user: satya
+      job: /home/scripts
+      insertafter: JAR
+      state: absent

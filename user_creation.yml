@@ -1,0 +1,15 @@
+---
+- name: user_creation
+  hosts: all
+  become: yes
+
+  tasks:
+  - name: usercreation
+    user:
+      name: "{{ item }}"
+      comment: QA team
+      shell: /bin/bash
+    loop:
+      - Rajy
+      - Mahi
+      - Ranveer

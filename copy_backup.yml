@@ -1,0 +1,13 @@
+- name: add permissions and copy
+  hosts: all
+  become: yes
+
+  tasks:
+  - name: copy with permissions
+    copy:
+      src: /home/hi.txt
+      dest: /home/
+      owner: satya
+      group: satya
+      mode: ugo=rw
+      backup: yes

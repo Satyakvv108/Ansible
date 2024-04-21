@@ -1,0 +1,6 @@
+---
+- name: httpd setup and firewall changes
+  hosts: all
+  roles:
+    - http-setup
+    - firwalld

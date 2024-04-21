@@ -1,0 +1,27 @@
+---
+# tasks file for httpd-setup
+
+---
+- name: Install httpd
+  apt:
+   name: "{{ httpd_pn}}"
+   state: present
+  become: true
+
+- name: copying html file to target
+  copy:
+    src: index.html                                  # Roles - files/
+    dest: /var/www/html/index.yml
+  become: true
+
+# note: will add the source file in roles -files/
+
+- name: start the service
+  service:
+    name: "{{ httpd_pn}}"
+    state: started
+    enabled: yes
+    become: true
+
+
+

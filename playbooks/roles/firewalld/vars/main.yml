@@ -1,0 +1,4 @@
+---
+# vars file for firewalld
+
+service_name: httpd

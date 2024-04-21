@@ -1,0 +1,16 @@
+---
+- name: file_module
+  hosts: all
+
+  tasks:
+  - name: creating a file
+    file:
+      path: /tmp/new.txt
+      state: touch
+      owner: satya
+      group: satya
+      mode: u=rw,g=rw,o=rw
+  - name: creating a directory 
+    file:
+      path: /tmp/folder
+      state: directory

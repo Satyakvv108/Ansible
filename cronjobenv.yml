@@ -1,0 +1,11 @@
+---
+- name: Remove cron
+  hosts: all
+
+  tasks:
+  - name: remove cron
+    cron:
+      name: VAR
+      env: yes
+      user: satya
+      job: /home/scripts

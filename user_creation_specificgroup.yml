@@ -1,0 +1,12 @@
+---
+- name: user_creation
+  hosts: all
+  become: yes
+
+  tasks:
+  - name: useradd
+    user:
+      name: satya
+      comment: QA team
+      shell: /bin/bash
+      group: satya

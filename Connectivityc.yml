@@ -1,0 +1,9 @@
+---
+ - name: Basic PB
+   hosts: localhost
+
+   tasks: 
+   - name: Test Connectivity
+     ping:
+   - name: "Print Output"
+     debug: msg="happybirthday"

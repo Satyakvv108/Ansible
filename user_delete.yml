@@ -1,0 +1,14 @@
+---
+- name: user_del
+  hosts: all
+  become: yes
+
+  tasks:
+  - name: userdel
+    user:
+      name: satya
+      comment: QA team
+      shell: /bin/bash
+      groups: satya,QA
+      state: absent
+      remove: yes

@@ -1,0 +1,10 @@
+---
+- name: Copying files to remote server
+  hosts: all
+  become: yes
+  
+  tasks:
+  - name: copy files 
+    copy:
+      src: /home/hi.txt
+      dest: /home/satya/

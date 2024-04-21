@@ -1,0 +1,10 @@
+---
+# tasks file for firewalld
+- name: enable a service in firewalld
+  firewalld:
+    service: "{{ service_name }}"
+    state: enabled
+    permenant: true
+  become: true
+  when: ansible_os_family == "Debian"
+  notify: reload_firewall

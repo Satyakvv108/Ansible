@@ -1,0 +1,18 @@
+---
+- name: Firewall changes
+  hosts: all
+  become: yes
+
+  tasks:
+  - name: enable service in firewall
+    firewalld:
+      port: 80/tcp
+      permanent: true
+      state: disabled
+    notify: reload firewald
+
+  handlers:
+  - name: reload firewald
+    service:
+      name: firewalld
+      state: reloaded

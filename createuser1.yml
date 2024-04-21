@@ -1,0 +1,12 @@
+---
+- name: Creating a user
+  hosts: all
+  become: yes
+
+  tasks: 
+  - name: create user
+    user:
+      name: Veera
+      comment: user from HR
+      shell: /bin/bash
+      groups: QA
